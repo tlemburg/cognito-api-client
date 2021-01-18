@@ -1,0 +1,9 @@
+#!/usr/bin/env ruby
+
+require 'pry'
+require './requester'
+require 'dotenv/load'
+
+requester = Requester.new(mode: ARGV[0]&.to_sym || :development)
+
+Pry.start_without_pry_byebug(binding, quiet: true)
